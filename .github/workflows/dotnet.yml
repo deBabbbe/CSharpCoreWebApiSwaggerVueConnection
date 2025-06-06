@@ -8,7 +8,10 @@ on:
     branches: [ "*" ]
   pull_request:
     branches: [ "*" ]
-
+  
+defaults:
+  run:
+    working-directory: ./WeatherApi
 jobs:
   build:
 
@@ -20,8 +23,6 @@ jobs:
       uses: actions/setup-dotnet@v4
       with:
         dotnet-version: 8.0.x
-    - name: Change to project directory
-      run: cd ./WeatherApi
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
