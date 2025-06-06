@@ -1,0 +1,13 @@
+.gitignore
+.npmignore
+.openapi-generator-ignore
+api.ts
+base.ts
+common.ts
+configuration.ts
+docs/WeatherApi.md
+docs/WeatherApiApi.md
+docs/WeatherData.md
+docs/WeatherForecast.md
+git_push.sh
+index.ts

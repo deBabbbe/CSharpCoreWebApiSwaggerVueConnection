@@ -15,7 +15,7 @@ public class WeatherController : ControllerBase
     }
 
     [HttpPost]
-    public ActionResult<WeatherData> Set([FromBody] WeatherData weatherData)
+    public ActionResult<WeatherData> Post([FromBody] WeatherData weatherData)
     {
         _weatherData.Add(weatherData);
         return Ok(weatherData);
@@ -28,4 +28,4 @@ public class WeatherData
     public int TemperatureC { get; set; }
     public string? Summary { get; set; }
     public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-} 
+}

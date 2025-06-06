@@ -1,0 +1,10 @@
+{
+  "inputSpec": "http://localhost:5258/swagger/v1/swagger.json",
+  "generatorName": "typescript-axios",
+  "output": "src/generated/api",
+  "additionalProperties": {
+    "supportsES6": true,
+    "npmVersion": "6.9.0",
+    "typescriptThreePlus": true
+  }
+} 

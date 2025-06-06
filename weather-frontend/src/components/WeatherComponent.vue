@@ -8,7 +8,7 @@
       <form @submit.prevent="addWeatherData">
         <div class="form-group">
           <label>Temperature (°C):</label>
-          <input v-model="newWeather.temperatureC" type="number" required />
+          <input v-model.number="newWeather.temperatureC" type="number" required />
         </div>
         <div class="form-group">
           <label>Summary:</label>
@@ -36,15 +36,15 @@
 </template>
 
 <script lang="ts">
-import axios from 'axios'
 import { defineComponent, onMounted, ref } from 'vue'
+import { Configuration, WeatherApi, WeatherData } from '../generated/api'
 
-interface WeatherData {
-  date: Date
-  temperatureC: number
-  temperatureF: number
-  summary: string
-}
+// Create API client instance
+const apiClient = new WeatherApi(
+  new Configuration({
+    basePath: 'http://localhost:5258',
+  })
+)
 
 export default defineComponent({
   name: 'WeatherComponent',
@@ -57,7 +57,7 @@ export default defineComponent({
 
     const fetchWeatherData = async () => {
       try {
-        const response = await axios.get('http://localhost:5258/Weather')
+        const response = await apiClient.weatherGet()
         weatherData.value = response.data
       } catch (error) {
         console.error('Error fetching weather data:', error)
@@ -66,13 +66,13 @@ export default defineComponent({
 
     const addWeatherData = async () => {
       try {
-        const weatherPayload = {
-          date: new Date(),
+        const weatherPayload: WeatherData = {
+          date: new Date().toISOString(),
           temperatureC: newWeather.value.temperatureC,
           summary: newWeather.value.summary
         }
         
-        await axios.post('http://localhost:5258/Weather', weatherPayload)
+        await apiClient.weatherPost(weatherPayload)
         await fetchWeatherData()
         
         // Reset form
