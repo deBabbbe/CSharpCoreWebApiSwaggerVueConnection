@@ -2,9 +2,9 @@ name: Vue.js Build
 
 on:
   push:
-    branches: [ * ]
+    branches: [ "*" ]
   pull_request:
-    branches: [ * ]
+    branches: [ "*" ]
 
 defaults:
   run:
