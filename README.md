@@ -1,4 +1,5 @@
-# ASP.NET Core Web API with Vue.js Frontend
+[![.NET](https://github.com/deBabbbe/CSharpCoreWebApiSwaggerVueConnection/actions/workflows/dotnet.yml/badge.svg)](https://github.com/deBabbbe/CSharpCoreWebApiSwaggerVueConnection/actions/workflows/dotnet.yml)
+[![Vue CI](https://github.com/deBabbbe/CSharpCoreWebApiSwaggerVueConnection/actions/workflows/vue.yml/badge.svg)](https://github.com/deBabbbe/CSharpCoreWebApiSwaggerVueConnection/actions/workflows/vue.yml)
 
 [![.NET](https://github.com/deBabbbe/CSharpCoreWebApiSwaggerVueConnection/actions/workflows/dotnet.yml/badge.svg)](https://github.com/deBabbbe/CSharpCoreWebApiSwaggerVueConnection/actions/workflows/dotnet.yml)
 
