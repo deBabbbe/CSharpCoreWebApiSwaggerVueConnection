@@ -8,14 +8,17 @@ on:
     branches: [ "*" ]
   pull_request:
     branches: [ "*" ]
-  
+
 defaults:
   run:
     working-directory: ./WeatherApi
+
 jobs:
   build:
-
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
 
     steps:
     - uses: actions/checkout@v4
@@ -29,3 +32,15 @@ jobs:
       run: dotnet build --no-restore
     - name: Test
       run: dotnet test --no-build --verbosity normal
+
+    - name: Publish Application
+      run: dotnet publish -c Release -r ${{ matrix.os == 'ubuntu-latest' && 'linux-x64' || matrix.os == 'macos-latest' && 'osx-x64' || 'win-x64' }} --self-contained true -o out/${{ matrix.os }}
+
+    - name: Debug Build Output
+      run: ls -R out/
+
+    - name: Upload Build Artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: ${{ matrix.os }}-binary
+        path: out/${{ matrix.os }}
