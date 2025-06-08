@@ -2,6 +2,8 @@
 
 [![Vue CI](https://github.com/deBabbbe/CSharpCoreWebApiSwaggerVueConnection/actions/workflows/vue.yml/badge.svg)](https://github.com/deBabbbe/CSharpCoreWebApiSwaggerVueConnection/actions/workflows/vue.yml)
 
+[![CodeQL Advanced](https://github.com/deBabbbe/CSharpCoreWebApiSwaggerVueConnection/actions/workflows/codeql.yml/badge.svg)](https://github.com/deBabbbe/CSharpCoreWebApiSwaggerVueConnection/actions/workflows/codeql.yml)
+
 This project demonstrates how to connect an ASP.NET Core Web API with a Vue.js frontend using OpenAPI/Swagger for type-safe API integration.
 
 ## Features
