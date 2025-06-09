@@ -16,7 +16,7 @@ This project demonstrates how to connect an ASP.NET Core Web API with a Vue.js f
 
 ## Prerequisites
 
-- .NET 8.0 SDK
+- .NET 9.0 SDK
 - Node.js (LTS version)
 - npm
 
